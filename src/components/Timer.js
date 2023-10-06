@@ -1,6 +1,11 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useContext } from "react";
+import theme from "../styles/theme";
+import { ThemeContext } from "../context/ThemeContext";
 
 const Timer = ({ targetDate }) => {
+  const { theme: selectedTheme } = useContext(ThemeContext); 
+  const themeStyles = theme[selectedTheme];
+
   const [timerDays, setTimerDays] = useState("00");
   const [timerHours, setTimerHours] = useState("00");
   const [timerMinutes, setTimerMinutes] = useState("00");
@@ -44,33 +49,33 @@ const Timer = ({ targetDate }) => {
   }, [targetDate]);
 
   return (
-    <div className="max-w-md flex flex-row justify-evenly items-center mx-auto px-100 py-5 bg-white mb-10 rounded-xl border-pink-200/100 border-2">
+    <div className={themeStyles.timerContainer}>
       <section className="flex flex-col items-center justify-center">
-        <p className="text-5xl font-bold text-center text-grey-500">
+        <p className={`text-5xl font-bold text-center ${themeStyles.textColor.primary}`}>
           {timerDays}
         </p>
-        <p>Days</p>
+        <p className={`text-center ${themeStyles.textColor.tertiary}`}>Days</p>
       </section>
-      <span className="text-5xl font-thin text-center text-grey-500">|</span>
+      <span className={`text-5xl font-thin text-center ${themeStyles.textColor.tertiary}`}>|</span>
       <section className="flex flex-col items-center justify-center">
-        <p className="text-5xl font-bold text-center text-grey-500">
+        <p className={`text-5xl font-bold text-center ${themeStyles.textColor.primary}`}>
           {timerHours}
         </p>
-        <p>Hours</p>
+        <p className={`text-center ${themeStyles.textColor.tertiary}`}>Hours</p>
       </section>
-      <span className="text-5xl font-thin text-center text-grey-500">|</span>
+      <span className={`text-5xl font-thin text-center ${themeStyles.textColor.tertiary}`}>|</span>
       <section className="flex flex-col items-center justify-center">
-        <p className="text-5xl font-bold text-center text-grey-500">
+        <p className={`text-5xl font-bold text-center ${themeStyles.textColor.primary}`}>
           {timerMinutes}
         </p>
-        <p>Minutes</p>
+        <p className={`text-center ${themeStyles.textColor.tertiary}`}>Minutes</p>
       </section>
-      <span className="text-5xl font-thin text-center text-grey-500">|</span>
+      <span className={`text-5xl font-thin text-center ${themeStyles.textColor.tertiary}`}>|</span>
       <section className="flex flex-col items-center justify-center">
-        <p className="text-5xl font-bold text-center text-grey-500">
+        <p className={`text-5xl font-bold text-center ${themeStyles.textColor.primary}`}>
           {timerSeconds}
         </p>
-        <p>Seconds</p>
+        <p className={`text-center ${themeStyles.textColor.tertiary}`}>Seconds</p>
       </section>
     </div>
   );

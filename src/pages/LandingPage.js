@@ -1,33 +1,41 @@
-import React from "react";
-import background from "../assets/6241816.jpg";
+import React, { useContext } from "react";
+import theme from "../styles/theme"; // Import the theme object
+import { ThemeContext } from "../context/ThemeContext";
 import Timer from "../components/Timer";
+import Palette from "../components/Pallete";
 
 const LandingPage = () => {
   const countDownDate = new Date("February 10, 2024 00:00:00").getTime();
 
+  const { theme: selectedTheme } = useContext(ThemeContext); 
+  const themeStyles = theme[selectedTheme];
+
   return (
     <div
       className="w-screen h-screen flex flex-row justify-center items-center"
-      style={{ backgroundImage: `url(${background})`, backgroundSize: "cover" }}
+      style={{
+        backgroundImage: themeStyles.backgroundImage,
+        backgroundSize: "cover",
+        fontFamily: themeStyles.fontFamily,
+      }}
     >
-      <div className="container bg-white backdrop-filter backdrop-blur-lg z-10 bg-opacity-50 border-b border-gray-200 rounded-xl">
-        <nav className="sm:max-w-md md:max-w-xl lg:max-w-5xl mx-auto px-100 py-10 flex flex-row justify-between items-center">
-          <h1 className="text-xl font-bold text-left text-grey-500">
-            Lunar New Year
-          </h1>
-          <h2 className="text-xl font-thin text-right text-grey-500">2024</h2>
+      <div className={themeStyles.container}>
+        <nav className="sm:max-w-md md:max-w-xl lg:max-w-3xl mx-auto px-100 py-10 flex flex-row justify-between items-center">
         </nav>
         <div className="max-w-5xl mx-auto px-100 py-20">
-          <h1 className="text-5xl font-bold text-center text-grey-500 leading-tight">
+          <h1 className={`text-5xl font-bold text-center ${themeStyles.textColor.primary} leading-tight`}>
             The Lunar New Year Is
             <br />
             Coming Soon
           </h1>
-          <p className="text-slate-400 text-center mt-5">
+          <p className={`text-center mt-5 ${themeStyles.textColor.secondary}`}>
             "As we turn a page on another year, we want to thank you for your
             <br />
             support and wish you a happy and prosperous new year."
           </p>
+        </div>
+        <div className="flex flex-row justify-evenly items-center mb-1">
+          <Palette />
         </div>
         <Timer targetDate={countDownDate} />
         <div></div>
