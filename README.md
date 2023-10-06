@@ -5,6 +5,7 @@ Welcome to the React Countdown Landing Page repository! This project is a simple
 ## Table of Contents
 
 - [Demo](#demo)
+- [Screenshot](#screenshot)
 - [Features](#features)
 - [Installation](#installation)
 - [Usage](#usage)
@@ -16,9 +17,16 @@ Welcome to the React Countdown Landing Page repository! This project is a simple
 
 You can see the live demo of the Lunar New Year Countdown Landing Page [here](https://react-countdown-landing-page-hvdb3vb4k-chachajonas-projects.vercel.app/).
 
+## Screenshot
+
+<img width="1470" alt="Screenshot 2023-10-06 at 15 43 16" src="https://github.com/chachajona/react-countdown-landing-page/assets/58243954/cab5c7ce-fc20-4218-b9e3-ac649a085d3f">
+<img width="1470" alt="Screenshot 2023-10-06 at 15 50 45" src="https://github.com/chachajona/react-countdown-landing-page/assets/58243954/1648f150-3929-49f7-9d04-40b78a58bf85">
+
+
 ## Features
 
-- **Countdown Timer**: A dynamic countdown timer that displays the remaining days, hours, minutes, and seconds until Lunar New Year.
+- **Countdown Timer**: A dynamic countdown timer that displays the remaining days, hours, minutes, and seconds until the Lunar New Year.
+- **Theme Switcher**: A theme switcher that switches between two themes implemented inside the project
 - **Interactive Animation**: Engaging animation to captivate your users as they watch the timer.
 - **Customizable**: Easily customize the text, colors, and images to fit your Lunar New Year theme.
 
@@ -57,7 +65,7 @@ To run this project locally, follow these steps:
 
 You can customize various aspects of the Lunar New Year Countdown Landing Page to make it fit your project's theme:
 
-- **Text**: Update the text displayed in the countdown page to reflect your messaging.
+- **Text**: Update the text displayed on the countdown page to reflect your messaging.
 - **Colors**: Modify the colors in the CSS to match your Lunar New Year color scheme.
 - **Images**: Replace the default images with your own Lunar New Year-themed images.
 
